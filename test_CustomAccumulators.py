@@ -133,7 +133,7 @@ class CustomAccumulatorsTestCase(unittest.TestCase):
         self.assertEqual([0, 1], sorted(out))
 
     def test_list_accumulator(self):
-        acc = self.spark.sparkContext.accumulator(set(), ca.SetAccumulator())
+        acc = self.spark.sparkContext.accumulator(list(), ca.ListAccumulator())
         acc_manager = AccumulatorManager(acc)
 
         def double(x, acc_manager_inst):
